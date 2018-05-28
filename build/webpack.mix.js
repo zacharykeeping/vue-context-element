@@ -5,4 +5,4 @@ mix
 	.setPublicPath('dist')
 	.js('src/index.js', 'index.js')
 	.sass('src/scss/app.scss', 'styles.css')
-	.sourceMaps(!inProduction);
+	.sourceMaps(! inProduction);
