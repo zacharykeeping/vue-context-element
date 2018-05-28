@@ -7,10 +7,12 @@
 			<b-collapse is-nav id="nav_collapse">
 				<b-navbar-nav class="ml-auto">
 					<b-nav-item href="https://github.com/rawilk/vue-context">
-						<i class="fab fa-github d-sm-none d-md-inline-block"></i>
+						<i class="fab fa-github d-sm-none d-md-inline-block">
+							<span class="sr-only">documentation</span>
+						</i>
 						<span class="d-sm-inline-block d-md-none">Documentation</span>
 					</b-nav-item>
-					<b-nav-item href="https://randallwilk.com">
+					<b-nav-item href="https://randallwilk.com" target="_blank">
 						&copy; Randall Wilk
 					</b-nav-item>
 				</b-navbar-nav>
