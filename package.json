@@ -1,0 +1,24 @@
+{
+  "name": "vue-context-docs",
+  "version": "0.1.0",
+  "description": "Documentation site for vue-context",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack.mix.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run dev -- --watch",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --env.mixfile=build/webpack.mix.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "Randall Wilk <randall@randallwilk.com>",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.1.6",
+    "laravel-mix": "^2.1.11",
+    "node-sass": "^4.9.0",
+    "prettier": "^1.12.0"
+  },
+  "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "vue": "^2.5.16",
+    "vue-context": "^3.0.1",
+    "vue-nav-tabs": "^0.5.7"
+  }
+}
