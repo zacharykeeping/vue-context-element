@@ -50,6 +50,12 @@
 				Click here for a more advanced solution
 			</a>
 		</p>
+
+		<p>
+			<b-link href="https://github.com/rawilk/vue-context/blob/gh-pages/src/tabs/basic-usage.vue">
+				View demo source
+			</b-link>
+		</p>
 	</div>
 </template>
 
