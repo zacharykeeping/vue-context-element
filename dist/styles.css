@@ -1,16 +1,1 @@
-.tab-pane {
-    padding: 15px
-}
-
-#demo-notes {
-    padding: 0 15px
-}
-
-.color-box {
-    width: 100px;
-    height: 100px
-}
-
-.color-box:first-child {
-    margin-left: 0 !important
-}
+.tab-pane{padding:15px}#demo-notes{padding:0 15px}.color-box{width:100px;height:100px}.color-box:first-child{margin-left:0!important}
