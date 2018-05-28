@@ -14,9 +14,7 @@ can easily be overridden.
 The menu disappears when you expect by using the `onblur` event and it also
 disappears when clicked on.
 
-<div style="margin:15px 0;text-align:text-center;">
-    <img src="screenshot.png" alt="Screenshot">
-</div>
+![Screenshot](screenshot.png)
 
 ## Demo
 
