@@ -5,7 +5,7 @@ import BootstrapVue from 'bootstrap-vue';
 Vue.use(BootstrapVue);
 
 new Vue({
-	components: {
-		App
-	}
+    components: {
+        App
+    }
 }).$mount('#app');

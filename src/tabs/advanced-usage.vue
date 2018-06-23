@@ -79,10 +79,15 @@
 </template>
 
 <script>
+    import { VueContext } from 'vue-context';
     import usageMixin from '../mixins/usageMixin';
 
     export default {
         name: 'advanced-usage',
+
+        components: {
+            VueContext
+        },
 
         mixins: [usageMixin],
 
