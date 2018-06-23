@@ -1,7 +1,7 @@
 import { VueContext } from 'vue-context';
 
 export default {
-	components: {
+    components: {
         VueContext
     },
 
