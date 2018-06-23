@@ -1,4 +1,10 @@
+import { VueContext } from 'vue-context';
+
 export default {
+	components: {
+        VueContext
+    },
+
     data () {
         return {
             items: [
