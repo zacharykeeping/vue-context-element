@@ -43,24 +43,6 @@
         },
 
         mounted () {
-            var uls = this.$el.getElementsByTagName('ul');
-            for (var ul of uls) {
-                ul.classList.add('el-dropdown-menu');
-            }
-
-            var lis = this.$el.getElementsByTagName('li');
-            for (var li of lis) {
-                li.classList.add('el-dropdown-menu__item');
-
-                if (li.hasAttribute('disabled')) {
-                    li.classList.add('is-disabled');
-                }
-
-                if (li.hasAttribute('divided')) {
-                    li.classList.add('el-dropdown-menu__item--divided');
-                }
-            }
-
             if (this.closeOnScroll) {
                 this.addScrollEventListener();
             }
@@ -99,6 +81,28 @@
             open (event, data) {
                 this.data = data;
                 this.show = true;
+                var uls = this.$el.getElementsByTagName('ul');
+                var lis = this.$el.getElementsByTagName('li');
+
+                for (var ul of uls) {
+                    ul.classList.add('el-dropdown-menu');
+                }
+
+                for (var li of lis) {
+                    li.classList.add('el-dropdown-menu__item');
+
+                    if (li.hasAttribute('disabled')) {
+                        li.classList.add('is-disabled');
+                    } else {
+                        li.classList.remove('is-disabled')
+                    }
+
+                    if (li.hasAttribute('divided')) {
+                        li.classList.add('el-dropdown-menu__item--divided');
+                    } else {
+                        li.classList.remove('el-dropdown-menu__item--divided');
+                    }
+                }
 
                 this.$nextTick(() => {
                     this.positionMenu(event.clientY, event.clientX);
