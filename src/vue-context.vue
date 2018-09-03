@@ -43,6 +43,24 @@
         },
 
         mounted () {
+            var uls = this.$el.getElementsByTagName('ul');
+            for (var ul of uls) {
+                ul.classList.add('el-dropdown-menu');
+            }
+
+            var lis = this.$el.getElementsByTagName('li');
+            for (var li of lis) {
+                li.classList.add('el-dropdown-menu__item');
+
+                if (li.hasAttribute('disabled')) {
+                    li.classList.add('is-disabled');
+                }
+
+                if (li.hasAttribute('divided')) {
+                    li.classList.add('el-dropdown-menu__item--divided');
+                }
+            }
+            
             if (this.closeOnScroll) {
                 this.addScrollEventListener();
             }
