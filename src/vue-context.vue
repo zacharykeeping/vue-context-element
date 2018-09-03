@@ -162,5 +162,11 @@
     .v-context {
         position: fixed;
         z-index: 99999;
+
+        ul {
+            li {
+                white-space: nowrap;
+            }
+        }
     }
 </style>
