@@ -169,4 +169,8 @@
             }
         }
     }
+
+    .v-context:focus {
+            outline: none;
+    }
 </style>
