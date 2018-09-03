@@ -60,7 +60,7 @@
                     li.classList.add('el-dropdown-menu__item--divided');
                 }
             }
-            
+
             if (this.closeOnScroll) {
                 this.addScrollEventListener();
             }
@@ -159,39 +159,8 @@
 </script>
 
 <style lang="scss" scoped>
-    $blue600: #1e88e5;
-    $gray74: #bdbdbd;
-    $gray93: #ededed;
-    $gray98: #fafafa;
-
     .v-context {
-        background: $gray98;
-        border: 1px solid $gray74;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-        display: block;
-        margin: 0;
-        padding: 0;
         position: fixed;
-        width: 250px;
         z-index: 99999;
-
-        ul {
-            list-style: none;
-            padding: 10px 0;
-            margin: 0;
-            font-size: 12px;
-            font-weight: 600;
-
-            li {
-                margin: 0;
-                padding: 10px 35px;
-                cursor: pointer;
-
-                &:hover {
-                    background: $blue600;
-                    color: $gray98;
-                }
-            }
-        }
     }
 </style>
