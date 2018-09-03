@@ -81,6 +81,18 @@
             open (event, data) {
                 this.data = data;
                 this.show = true;
+                this.styleMenu();
+
+                this.$nextTick(() => {
+                    this.positionMenu(event.clientY, event.clientX);
+                    this.$el.focus();
+                });
+            },
+
+            /**
+             * Style the context menu.
+             */
+            styleMenu() {
                 var uls = this.$el.getElementsByTagName('ul');
                 var lis = this.$el.getElementsByTagName('li');
 
@@ -103,11 +115,6 @@
                         li.classList.remove('el-dropdown-menu__item--divided');
                     }
                 }
-
-                this.$nextTick(() => {
-                    this.positionMenu(event.clientY, event.clientX);
-                    this.$el.focus();
-                });
             },
 
             /**
@@ -175,6 +182,6 @@
     }
 
     .v-context:focus {
-            outline: none;
+        outline: none;
     }
 </style>
