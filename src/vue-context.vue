@@ -49,6 +49,10 @@
         },
 
         beforeDestroy () {
+            if (this.observer) {
+                this.observer.disconnect();
+            }
+            
             if (this.closeOnScroll) {
                 this.removeScrollEventListener();
             }
@@ -70,6 +74,26 @@
                 this.left = null;
                 this.data = null;
                 this.show = false;
+
+                if (this.observer) {
+                    this.observer.disconnect();
+                }
+            },
+
+            /**
+             * Mount MutationObserver to check for changes.
+             */
+            mountObserver() {
+                if (this.$el.getElementsByTagName('ul').length > 0) {
+                    this.observer = new MutationObserver(function(mutations) {
+                        this.styleMenu();
+                    }.bind(this));
+                    
+                    this.observer.observe(
+                        this.$el.getElementsByTagName('ul')[0],
+                        { childList: true }
+                    );
+                }
             },
 
             /**
@@ -86,35 +110,8 @@
                 this.$nextTick(() => {
                     this.positionMenu(event.clientY, event.clientX);
                     this.$el.focus();
+                    this.mountObserver();
                 });
-            },
-
-            /**
-             * Style the context menu.
-             */
-            styleMenu() {
-                var uls = this.$el.getElementsByTagName('ul');
-                var lis = this.$el.getElementsByTagName('li');
-
-                for (var ul of uls) {
-                    ul.classList.add('el-dropdown-menu');
-                }
-
-                for (var li of lis) {
-                    li.classList.add('el-dropdown-menu__item');
-
-                    if (li.hasAttribute('disabled')) {
-                        li.classList.add('is-disabled');
-                    } else {
-                        li.classList.remove('is-disabled')
-                    }
-
-                    if (li.hasAttribute('divided')) {
-                        li.classList.add('el-dropdown-menu__item--divided');
-                    } else {
-                        li.classList.remove('el-dropdown-menu__item--divided');
-                    }
-                }
             },
 
             /**
@@ -144,7 +141,35 @@
              */
             removeScrollEventListener () {
                 window.removeEventListener('scroll', this.close);
-            }
+            },
+
+            /**
+             * Style the context menu.
+             */
+            styleMenu() {
+                var uls = this.$el.getElementsByTagName('ul');
+                var lis = this.$el.getElementsByTagName('li');
+
+                for (var ul of uls) {
+                    ul.classList.add('el-dropdown-menu');
+                }
+
+                for (var li of lis) {
+                    li.classList.add('el-dropdown-menu__item');
+
+                    if (li.hasAttribute('disabled')) {
+                        li.classList.add('is-disabled');
+                    } else {
+                        li.classList.remove('is-disabled')
+                    }
+
+                    if (li.hasAttribute('divided')) {
+                        li.classList.add('el-dropdown-menu__item--divided');
+                    } else {
+                        li.classList.remove('el-dropdown-menu__item--divided');
+                    }
+                }
+            },
         },
 
         watch: {
