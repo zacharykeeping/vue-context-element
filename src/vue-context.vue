@@ -106,11 +106,11 @@
                 this.data = data;
                 this.show = true;
                 this.styleMenu();
+                this.mountObserver();
 
                 this.$nextTick(() => {
                     this.positionMenu(event.clientY, event.clientX);
                     this.$el.focus();
-                    this.mountObserver();
                 });
             },
 
