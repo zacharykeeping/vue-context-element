@@ -152,6 +152,7 @@
 
                 for (var ul of uls) {
                     ul.classList.add('el-dropdown-menu');
+                    ul.style.position = 'relative';
                 }
 
                 for (var li of lis) {
