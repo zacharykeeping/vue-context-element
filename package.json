@@ -1,6 +1,6 @@
 {
   "name": "vue-context-element",
-  "version": "3.1.9",
+  "version": "3.1.10",
   "description": "A simple fork of Vue-Context using Element UI",
   "main": "dist/vue-context.js",
   "scripts": {
